@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dev.schruptor.alfred.tablepro.launcher</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>INPUT1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ACTION1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>schruptor</string>
+	<key>description</key>
+	<string>Open saved TablePro connections from Alfred, filter by tags and groups, launch browser targets, and show a built-in help overlay.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TablePro Launcher</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python3 run_action.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>ACTION1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>tpro</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading TablePro connections…</string>
+				<key>script</key>
+				<string>/usr/bin/python3 tablepro_connections.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search, filter, browse, copy, and get help for TablePro connections</string>
+				<key>title</key>
+				<string>TablePro Launcher</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>INPUT1</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># TablePro Launcher
+
+Open your saved TablePro connections from Alfred.
+
+## Features
+
+- Search all saved connections
+- Filter by tags with `tag:&lt;name&gt;`
+- Filter by groups with `group:&lt;name&gt;`
+- Open the related SSH or host URL in your default browser
+- Copy the browser URL or the generated TablePro URL
+- Show an in-app help overlay with `tpro help`, `tpro --help`, or `tpro -h`
+
+## Keyword
+
+`tpro`
+
+## Query examples
+
+- `tpro`
+- `tpro postgres`
+- `tpro tag:production`
+- `tpro group:backend`
+- `tpro group:backend tag:production postgres`
+
+## Actions
+
+- `Enter` opens the selected connection in TablePro
+- `Command+Enter` opens the SSH host or host URL in the default browser
+- `Option+Enter` copies the SSH host or host URL
+- `Control+Enter` copies the generated TablePro connection URL
+- `Shift+Enter` shows the help overlay
+
+## Notes
+
+- Browser actions prefer `sshHost` when SSH is enabled.
+- TablePro is launched via AppleScript first, then the connection is opened.
+- The workflow reads `com.TablePro.connections`, `com.TablePro.tags`, and `com.TablePro.groups` from `~/Library/Preferences/com.TablePro.plist`.
+</string>
+	<key>uidata</key>
+	<dict>
+		<key>ACTION1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>420</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>INPUT1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>version</key>
+	<string>1.6.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/datlechin/TablePro</string>
+</dict>
+</plist>
