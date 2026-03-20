@@ -143,29 +143,28 @@ Open your saved TablePro connections from Alfred.
 
 - Browser actions prefer `sshHost` when SSH is enabled.
 - TablePro is launched via AppleScript first, then the connection is opened.
-- The workflow reads `com.TablePro.connections`, `com.TablePro.tags`, and `com.TablePro.groups` from `~/Library/Preferences/com.TablePro.plist`.
-</string>
+- The workflow reads `com.TablePro.connections`, `com.TablePro.tags`, and `com.TablePro.groups` from `~/Library/Preferences/com.TablePro.plist`.</string>
 	<key>uidata</key>
 	<dict>
 		<key>ACTION1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>420</integer>
+			<real>420</real>
 			<key>ypos</key>
-			<integer>120</integer>
+			<real>120</real>
 		</dict>
 		<key>INPUT1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>120</integer>
+			<real>120</real>
 			<key>ypos</key>
-			<integer>120</integer>
+			<real>120</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
 	<key>version</key>
-	<string>1.6.0</string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/datlechin/TablePro</string>
 </dict>
